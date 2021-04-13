@@ -1,4 +1,4 @@
-const Image = require("../middlewares/schema.middlewares");
+const Image = require("../models/schema.models");
 
 /**
  * Entidad para el manejo de servicios.

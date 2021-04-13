@@ -14,18 +14,18 @@ app.set("view engine", "ejs");
 //middlewares
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
-const storage = multer.diskStorage({
-    destination: path.join(__dirname, 'public/img/uploads'),
-    filename: (req, file, cb, filename) => {
-        console.log(file);
-        cb(null, uuid() + path.extname(file.originalname));
-    }
-}) 
-app.use(multer({storage}).single('image'));
+// const storage = multer.diskStorage({
+//     destination: path.join(__dirname, 'public/img/uploads'),
+//     filename: (req, file, cb, filename) => {
+//         console.log(file);
+//         cb(null, uuid() + path.extname(file.originalname));
+//     }
+// }) 
+// app.use(multer({storage}).single('image'));
 
 // Global variables
 app.use((req, res, next) => {
-  app.locals.format = format;
+  // app.locals.format = format;
   next();
 });
 
