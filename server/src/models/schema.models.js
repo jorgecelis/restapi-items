@@ -1,17 +1,17 @@
 const mongoose = require("mongoose");
 let Schema = mongoose.Schema;
 
-const imageSchema = new Schema({
+const productSchema = new Schema({
     _id: { type: mongoose.Types.ObjectId, auto: true },
     title: {type: String},
     descripcion:{type: String},
     filename:{type:String},
     originalname:{type:String},
-    mimetype:{type:String},
-    size: {type:Number},
+    // mimetype:{type:String},
+    // size: {type:Number},
     create_at:{type:Date, default: Date.now()}
-});
+});s
 
-const itemModel = mongoose.model("Image", imageSchema);
+const productModel = mongoose.model("Products", productSchema);
 
-module.exports = itemModel;
+module.exports = productModel;

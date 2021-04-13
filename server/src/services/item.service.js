@@ -1,4 +1,4 @@
-const Image = require("../models/schema.models");
+const Products = require("../models/schema.models");
 
 /**
  * Entidad para el manejo de servicios.
@@ -14,47 +14,45 @@ class ItemService {
   static async getAll(req) {
     // console.log(req.params);
     // console.log(req.query);
-    let images = await Image.find();
-    return images;
+    let products = await Products.find();
+    return products;
   }
 
   //Create images
   static async save(req) {
     //console.log("entre al service", req.body);
-    let images = await Image.create(req.body);
+    let product = await Products.create(req.body);
 
-    return images;
+    return product;
   }
   
 
   //Find one user by id
   static async getById(req) {
-    let images = await Image.findById(req.params.id);
+    let product = await Products.findById(req.params.id);
 
-    return images;
+    return product;
   }
 
   //Update user
   static async update(req) {
-    let images = await Image.findByIdAndUpdate(req.params.id, {
+    let product = await Products.findByIdAndUpdate(req.params.id, {
 
         title: req.body.title,
         description: req.body.description,
         filename: req.file.filename,
-        path: '/img/uploads' + req.file.filename,
+        // path: '/img/uploads' + req.file.filename,
         originalname: req.file.originalname,
-        mimetype: req.file.mimetype,
-        size: req.file.size
-        
-      
+        // mimetype: req.file.mimetype,
+        // size: req.file.size
     });
 
-    return images;
+    return product;
   }
 
   //Delete user
   static async delete(req) {
-    await Image.findByIdAndDelete(req.params.id);
+    await Products.findByIdAndDelete(req.params.id);
     return "usuario eliminado";
   }
 }
