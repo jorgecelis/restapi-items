@@ -36,17 +36,17 @@ class ItemService {
 
   //Update user
   static async update(req) {
+    console.log("req update",req)
     let product = await Products.findByIdAndUpdate(req.params.id, {
-
         title: req.body.title,
         description: req.body.description,
-        filename: req.file.filename,
+        filename: req.body.filename,
         // path: '/img/uploads' + req.file.filename,
         originalname: req.file.originalname,
         // mimetype: req.file.mimetype,
         // size: req.file.size
     });
-
+  
     return product;
   }
 

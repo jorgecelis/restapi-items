@@ -27,6 +27,7 @@ class ItemController {
 
   static async update(req, res) {
     const { data, code } = await ItemLogic.update(req);
+    console.log(data)
     res.status(code).send(data);
   }
 
