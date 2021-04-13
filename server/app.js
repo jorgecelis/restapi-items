@@ -5,13 +5,10 @@ const uuid = require("uuid");
 const path = require("path");
 const cors = require("cors");
 const router = require("./routes");
-const ErrorMiddleware = require('./src/middlewares/error.middleware')
-
-
+const ErrorMiddleware = require("./src/middlewares/error.middleware");
 
 const express = require("express");
 const app = express();
-
 
 app.use(cors());
 //settings
