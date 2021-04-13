@@ -1,6 +1,5 @@
-const express = require('express')
+const express = require("express");
 const ItemController = require("./src/controllers/item.controller");
-
 
 const router = express();
 
@@ -18,6 +17,5 @@ router.put("/items/:id", ItemController.update);
 
 //Delete user by id
 router.delete("/items/:id", ItemController.delete);
-
 
 module.exports = router;
