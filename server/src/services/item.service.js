@@ -14,8 +14,8 @@ class ItemService {
   static async getAll(req) {
     // console.log(req.params);
     // console.log(req.query);
-    let products = await Products.find();
-    return products;
+    let product = await Products.find();
+    return product;
   }
 
   //Create images
@@ -40,11 +40,10 @@ class ItemService {
     let product = await Products.findByIdAndUpdate(req.params.id, {
         title: req.body.title,
         description: req.body.description,
-        filename: req.body.filename,
-        // path: '/img/uploads' + req.file.filename,
+        url: req.body.filename,
         originalname: req.file.originalname,
-        // mimetype: req.file.mimetype,
-        // size: req.file.size
+        mimetype: req.file.mimetype,
+        size: req.file.size
     });
   
     return product;
@@ -53,7 +52,7 @@ class ItemService {
   //Delete user
   static async delete(req) {
     await Products.findByIdAndDelete(req.params.id);
-    return "usuario eliminado";
+    return "producto eliminado";
   }
 }
 

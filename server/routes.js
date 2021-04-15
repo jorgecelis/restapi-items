@@ -4,18 +4,18 @@ const ItemController = require("./src/controllers/item.controller");
 const router = express();
 
 //find and show all users
-router.get("/items", ItemController.getAll);
+router.get("/products", ItemController.getAll);
 
 //create user
-router.post("/items", ItemController.save);
+router.post("/products", ItemController.save);
 
 //find one user by id
-router.get("/items/:id", ItemController.getById);
+router.get("/products/:id", ItemController.getById);
 
 //Put user by id
-router.put("/items/:id", ItemController.update);
+router.put("/products/:id", ItemController.update);
 
 //Delete user by id
-router.delete("/items/:id", ItemController.delete);
+router.delete("/products/:id", ItemController.delete);
 
 module.exports = router;
